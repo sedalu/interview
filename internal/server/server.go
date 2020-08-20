@@ -8,6 +8,7 @@ import (
 	"sync"
 
 	"github.com/gorilla/mux"
+	"github.com/sedalu/interview/internal/store"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -27,6 +28,8 @@ const (
 )
 
 type Server struct {
+	store.Store
+
 	r    *mux.Router
 	once sync.Once
 }
