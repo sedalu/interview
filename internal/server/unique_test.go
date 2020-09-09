@@ -27,7 +27,7 @@ func TestUniqueHandler_ServerHTTP(t *testing.T) {
 	}{
 		{"unique1", request{`[1,1,2,4,3,5,4,4,1,2,6]`}, response{http.StatusOK, `[1,2,4,3,5,6]`}},
 		{"unique2", request{`[9,7,5,3,1,2,4,6,8,0]`}, response{http.StatusOK, `[9,7,5,3,1,2,4,6,8,0]`}},
-		{"unique3", request{`[5,3,3,3,1,2,4,2,2,0]`}, response{http.StatusOK, `[5,3,1,4,2,0]`}},
+		{"unique3", request{`[5,3,3,3,1,4,2,2,0]`}, response{http.StatusOK, `[5,3,1,4,2,0]`}},
 	}
 	for _, tt := range tests {
 		tt := tt
